@@ -1,6 +1,10 @@
 const path=require('path');
 
-module.exports={
+module.exports=(env)=>{
+    //console.log('env',env);
+    const isProduction=env.production;
+    //console.log('env',isProduction);
+    return {
     //entry:path.resolve(__dirname,'src')+'/app.js',
     entry:'./src/app.js',
     output: {
@@ -13,13 +17,13 @@ module.exports={
             test:/\.js$/,
             exclude:/node_modules/
         },
-        {
-            use:['style-loader','css-loader','sass-loader'],
-            test:/\.s?css$/
+        {   test:/\.s?css$/,
+            use:['style-loader','css-loader','sass-loader']
+            
         }]
 
     },
-    devtool:"eval-cheap-module-source-map",
+    devtool: isProduction ? 'source-map': "eval-cheap-module-source-map",
     devServer:{
         contentBase:path.join(__dirname,'public'),
         port:8080,
@@ -27,4 +31,5 @@ module.exports={
         historyApiFallback: true,
      
     }
+}
 };

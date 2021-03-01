@@ -12,7 +12,7 @@ import 'react-dates/lib/css/_datepicker.css';
 
 
 var appRoot=document.getElementById("app");
-
+console.log('test');
 const store=configStore();
 
 const jsx=(
