@@ -8,7 +8,7 @@ module.exports=(env)=>{
     //entry:path.resolve(__dirname,'src')+'/app.js',
     entry:'./src/app.js',
     output: {
-        path: path.join(__dirname, 'public'),
+        path: path.join(__dirname, 'public','dist'),
         filename: 'bundle.js',
       },
     module:{
@@ -26,6 +26,7 @@ module.exports=(env)=>{
     devtool: isProduction ? 'source-map': "eval-cheap-module-source-map",
     devServer:{
         contentBase:path.join(__dirname,'public'),
+        publicPath:'/dist/',
         port:8080,
         watchContentBase:true,
         historyApiFallback: true,
