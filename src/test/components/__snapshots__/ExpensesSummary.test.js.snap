@@ -1,34 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Should render expenses Summary with empty expenses 1`] = `
-<div>
-  <p>
-    View 
-    0
-     expense totaling 
-    $0.00
-  </p>
-</div>
-`;
-
 exports[`Should render expenses Summary with expenses 1`] = `
 <div>
-  <p>
+  <h1>
     View 
-    3
-     expenses totaling 
-    $241.95
-  </p>
+    4
+     
+    expenses
+     totaling 
+    $54,545.44
+  </h1>
 </div>
 `;
 
 exports[`Should render expenses Summary with one expenses 1`] = `
 <div>
-  <p>
+  <h1>
     View 
     1
-     expense totaling 
-    $1.95
-  </p>
+     
+    expense
+     totaling 
+    $545.44
+  </h1>
 </div>
 `;
