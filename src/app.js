@@ -3,16 +3,14 @@ import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
 import AppRouter from './routers/AppRouter';
 import configStore from './store/configStore';
-import {addExpense} from './actions/expenses';
-import {setSortByAmount, setTextFilter} from './actions/filters';
-import getVisibleExpenses from './selectors/expenses';
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
 import 'react-dates/lib/css/_datepicker.css';
+import './firebase/firebase';
 
 
 var appRoot=document.getElementById("app");
-console.log('test');
+
 const store=configStore();
 
 const jsx=(
