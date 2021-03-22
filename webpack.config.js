@@ -8,7 +8,7 @@ if(process.env.NODE_ENV==='test')
 }
 else if (process.env.NODE_ENV==='development')
 {
-    equire('dotenv').config({path:'.env.development'});
+    require('dotenv').config({path:'.env.development'});
 }
 module.exports=(env)=>{
     //console.log('env',env);
