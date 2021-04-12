@@ -9,7 +9,7 @@ import 'normalize.css/normalize.css';
 import './styles/styles.scss';
 import 'react-dates/lib/css/_datepicker.css';
 import {firebase} from './firebase/firebase';
-
+import LoadingPage from './components/LoadingPage'
 
 var appRoot=document.getElementById("app");
 
@@ -28,17 +28,17 @@ const renderApp=()=>{
         hasRendered=true;
     }
 }
-ReactDOM.render(<p>Loading...</p>,appRoot);
+ReactDOM.render(<LoadingPage />,appRoot);
 
 firebase.auth().onAuthStateChanged((user)=>{
     if(user)
     {
-     console.log('uid',user.uid);   
+    // console.log('uid',user.uid);   
     store.dispatch(login(user.uid));
     store.dispatch(startSetExpenses()).then(()=>{
         renderApp();
         if(history.location.pathname==='/'){
-            history.push('/Dashboard');
+            history.push('/dashboard');
         }
 });
 
